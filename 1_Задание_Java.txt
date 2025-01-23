@@ -1,0 +1,342 @@
+//1 задание
+
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        System.out.print("Введите число: ");
+        int num = in.nextInt();
+        String a;
+
+        if (num%2 == 0) {
+            a = "Чётное";
+        }
+        else {
+            a = "Нечётное";
+        }
+        System.out.printf("Ваше число: %s \n", a);
+        in.close();
+    }
+}
+
+//2 задание
+
+import java.util.Scanner;
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        Vector<Integer> numbers = new Vector<Integer>();
+
+        System.out.print("Введите первое число: ");
+        numbers.add(in.nextInt());
+        System.out.print("Введите второе число: ");
+        numbers.add(in.nextInt());
+        System.out.print("Введите третье число: ");
+        numbers.add(in.nextInt());
+
+        System.out.print("Минимальное число: " + Collections.min(numbers));
+    }
+}
+
+//3 задание
+
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+
+        for (int i = 1; i <= 10; i++) {
+            System.out.println(5 * i);
+        }
+    }
+}
+
+//4 задание
+
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+
+        System.out.print("Введите число: ");
+        int num = in.nextInt();
+        int sum = 0;
+
+        if (num == 0) {
+            System.out.println(sum);
+        }
+        else {
+            for (int i = 1; i <= num + 1; i++) {
+                System.out.println(sum);
+                sum += i;
+            }
+        }
+    }
+}
+
+//5 задание
+
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        System.out.print("Введите число: ");
+        int num = in.nextInt();
+        int a = 0;
+        int b = 1;
+        for (int i = 2; i <= num; ++i) {
+            int next = a + b;
+            a = b;
+            b = next;
+        }
+        System.out.println(b);
+    }
+}
+
+//6 задание
+
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        System.out.print("Введите число: ");
+        int num = in.nextInt();
+        int schet = 0;
+
+        for (int i = 2; i < num; i++) {
+            if (num%i == 0) schet++;
+        }
+
+        if (schet == 0) {
+            System.out.println("Это простое число");
+        }
+        else System.out.println("Это не простое число");
+    }
+}
+
+//7 задание
+
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        System.out.print("Введите число: ");
+        int num = in.nextInt();
+
+        for (int i = 0; i < num; i++) {
+            System.out.println(num-i);
+        }
+    }
+}
+
+//8 задание
+
+import java.util.Collections;
+import java.util.Scanner;
+import java.util.Vector;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        Vector <Integer> a = new Vector<>();
+        System.out.print("Введите первое число: ");
+        a.add(in.nextInt());
+        System.out.print("Введите второе число: ");
+        a.add(in.nextInt());
+        int chet = 0;
+        int tochka = 0;
+        int j = 0;
+
+        for (int i = Collections.min(a); i <= Collections.max(a); i++) {
+            tochka = Collections.min(a) + j;
+            j++;
+            if (tochka%2 == 0) chet += tochka;
+        }
+
+        System.out.println("Сумма чётных чисел: " + chet);
+    }
+}
+
+//9 задание
+
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        System.out.print("Введите сторку: ");
+        String a = in.nextLine();
+        int len = a.length();
+
+        for (int i = 1; i <= len; i++) {
+            System.out.print(a.charAt(len - i));
+        }
+    }
+}
+
+//10 задание
+
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        System.out.print("Введите число: ");
+        String a = in.nextLine();
+
+        System.out.println("Количество цифр в числе: " + a.length());
+    }
+}
+
+//11 задание
+
+import java.util.Scanner;
+
+public class Main {
+
+    public static int Fk(int f) {
+        int result = 1;
+        for (int i = 1; i <= f; i++) {
+            result = result * i;
+        }
+        return result;
+    }
+
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        System.out.print("Введите число: ");
+        int a = in.nextInt();
+
+        System.out.println("Факториал числа: " + Fk(a));
+    }
+}
+
+//12 задание
+
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        System.out.print("Введите число: ");
+        int a = in.nextInt();
+        int sum = 0;
+
+        while (a != 0) {
+            sum += (a%10);
+            a/=10;
+        }
+        System.out.println("Сумма цифр в числе: " + sum);
+    }
+}
+
+//13 задание
+
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        System.out.print("Введите сторку: ");
+        String a = in.nextLine();
+        int len = a.length();
+        String stroka = "";
+
+        for (int i = 1; i <= len; i++) {
+            stroka += a.charAt(len - i);
+        }
+        if (a.equals(stroka)) System.out.print("Это палиндром");
+        else System.out.print("Это не палиндром");
+    }
+}
+
+//14 задание
+
+import java.util.Collections;
+import java.util.Scanner;
+import java.util.Vector;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        Vector <Integer> a = new Vector<>();
+
+        System.out.print("Введите размер массива: ");
+        int razm = in.nextInt();
+
+        for (int i = 0; i < razm; i++) {
+            System.out.print("Введите число: ");
+            a.add(in.nextInt());
+        }
+
+        System.out.println("Самое большое число: " + Collections.max(a));
+    }
+}
+
+//15 задание
+
+import java.util.Collections;
+import java.util.Scanner;
+import java.util.Vector;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        Vector <Integer> a = new Vector<>();
+        int sum = 0;
+
+        System.out.print("Введите размер массива: ");
+        int razm = in.nextInt();
+
+        for (int i = 0; i < razm; i++) {
+            System.out.print("Введите число: ");
+            a.add(in.nextInt());
+        }
+
+        for (int i = 0; i < razm; i++) {
+            sum += a.get(i);
+        }
+
+        System.out.println("Сумма всех чисел массива: " + sum);
+    }
+}
+
+//16 задание
+
+import java.util.Scanner;
+import java.util.Vector;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        Vector <Integer> a = new Vector<>();
+        int plus = 0;
+        int mins = 0;
+
+        System.out.print("Введите размер массива: ");
+        int razm = in.nextInt();
+
+        for (int i = 0; i < razm; i++) {
+            System.out.print("Введите число: ");
+            a.add(in.nextInt());
+        }
+
+        for (int i = 0; i < razm; i++) {
+            if (a.get(i) >= 0) plus++;
+            else mins++;
+        }
+
+        System.out.println("Положительных чисел: " + plus + ", Отрицательных чисел: " + mins);
+    }
+}
+
+//17 задание
+
