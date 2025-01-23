@@ -340,3 +340,135 @@ public class Main {
 
 //17 задание
 
+import java.util.Collections;
+import java.util.Scanner;
+import java.util.Vector;
+
+public class Main {
+    public static boolean IsProst(int p) {
+        boolean isornot = true;
+        if (p > 1) {
+            for(int i =2; i<p; i++) {
+                if (p % i == 0) {
+                    isornot = false;
+                    break;
+                }
+            }
+        }
+        else isornot = false;
+        return isornot;
+    }
+
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        Vector <Integer> a = new Vector<>();
+        System.out.print("Введите первое число: ");
+        a.add(in.nextInt());
+        System.out.print("Введите второе число: ");
+        a.add(in.nextInt());
+        int sum = 0;
+
+        for (int i = Collections.min(a); i <= Collections.max(a); i++) {
+            if (IsProst(i) == true) sum += i;
+        }
+
+        System.out.println("Сумма простых чисел: " + sum);
+    }
+}
+
+//18 задание
+
+import java.util.Scanner;
+
+public class Main {
+    public static void count(String str) {
+        int vow = 0, con = 0;
+
+        String ref = "aeiouAEIOU";
+
+        for (int i = 0; i < str.length(); i++) {
+            if ((str.charAt(i) >= 'A'
+                    && str.charAt(i) <= 'Z')
+                    || (str.charAt(i) >= 'a'
+                    && str.charAt(i) <= 'z')) {
+                if (ref.indexOf(str.charAt(i)) != -1)
+                    vow++;
+                else
+                    con++;
+            }
+        }
+
+        System.out.println("Гласные: " + vow + "\nСогласные: " + con);
+    }
+
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        System.out.print("Введите сторку: ");
+        String str = in.nextLine();
+        count(str);
+    }
+}
+
+//19 задание
+
+import java.util.Scanner;
+
+public class Main {
+
+    public static String Perevorot(String str) {
+        int len = str.length();
+        String str2 = "";
+
+        for (int i = 1; i <= len; i++) {
+            str2 += str.charAt(len - i);
+        }
+
+        return str2;
+    }
+
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        System.out.print("Введите сторку: ");
+        String a = in.nextLine();
+        int len = a.length();
+        String stroka = "";
+        String vrem = "";
+        String vrem2 = "";
+
+        for (int i = 1; i <= len; i++) {
+            if (a.charAt(len - i) == ' ') {
+                stroka += Perevorot(vrem);
+                stroka += " ";
+                vrem = "";
+            }
+            else if (i == len) {
+                stroka += Perevorot(vrem);
+                vrem = "";
+            }
+            else vrem += a.charAt(len - i);
+        }
+        System.out.println("Перевёртыш: " + stroka);
+    }
+}
+
+//20 задание
+
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        System.out.print("Введите число: ");
+        int a = in.nextInt();
+        int a2 = a;
+        int sum = 0;
+        var len = String.valueOf(a).length();
+
+        while (a != 0) {
+            sum += (int) Math.pow((a%10), len);
+            a/=10;
+        }
+        if (sum == a2) System.out.println("Это число Армстронга");
+        else System.out.println("Это не число Армстронга");
+    }
+}
